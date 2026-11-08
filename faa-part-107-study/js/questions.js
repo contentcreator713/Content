@@ -35,7 +35,7 @@ const QUESTION_BANK = [
     question: "What is the minimum age to obtain a Part 107 remote pilot certificate?",
     choices: ["14", "16", "18", "21"],
     answer: 1,
-    explanation: "An applicant must be at least 16 years old and pass the aeronautical knowledge test.",
+    explanation: "The certificate requires age 16. The ACS notes that an applicant must be at least 14 to take the knowledge test.",
     ref: "14 CFR Part 107, remote pilot certification"
   },
   {
@@ -450,7 +450,7 @@ const QUESTION_BANK = [
       "Decreasing winds aloft"
     ],
     answer: 1,
-    explanation: "Falling pressure usually means a low-pressure system is approaching, which often brings clouds, precipitation, and wind changes.",
+    explanation: "The study guide says decreasing or rapidly falling pressure usually indicates approaching bad weather and possibly severe storms, while rising pressure generally indicates fair weather.",
     ref: "PHAK Ch. 12"
   },
 
@@ -635,13 +635,13 @@ const QUESTION_BANK = [
     id: "adm-02", topic: "adm",
     question: "What does the IMSAFE checklist cover?",
     choices: [
-      "Illness, Medication, Stress, Alcohol, Fatigue, Eating/Emotion",
+      "Illness, Medication, Stress, Alcohol, Fatigue, Emotion",
       "Instruments, Maps, Speed, Altitude, Fuel, Engine",
       "Intent, Method, Safety, Altitude, Flight, Environment",
       "Inspection, Monitoring, Safety, Fuel, Equipment"
     ],
     answer: 0,
-    explanation: "IMSAFE is a personal fitness self-check: Illness, Medication, Stress, Alcohol, Fatigue, and Eating/Emotional state.",
+    explanation: "IMSAFE is a personal fitness self-check: Illness, Medication, Stress, Alcohol, Fatigue, and Emotion, as listed in the FAA Remote Pilot Study Guide.",
     ref: "PHAK Ch. 17"
   },
   {
@@ -665,7 +665,7 @@ const QUESTION_BANK = [
     question: "The attitude 'Don't tell me what to do' describes which hazardous attitude?",
     choices: ["Anti-authority", "Macho", "Resignation", "Impulsivity"],
     answer: 0,
-    explanation: "Anti-authority rejects rules and instructions. The antidote is 'Rules are made to be followed.'",
+    explanation: "Anti-authority rejects rules and instructions. The study guide's antidote is 'Follow the rules. They are usually right.'",
     ref: "PHAK Ch. 17"
   },
   {
@@ -706,11 +706,11 @@ const QUESTION_BANK = [
   },
   {
     id: "physio-02", topic: "physio",
-    question: "Which medical condition can produce a false sensation of motion or spinning?",
-    choices: ["Vertigo", "Sunburn", "Mild thirst", "Hiccups"],
+    question: "Which is a common symptom of hyperventilation?",
+    choices: ["Visual impairment and lightheadedness", "Increased appetite", "Warm, dry skin only", "Slow, shallow breathing"],
     answer: 0,
-    explanation: "Vertigo causes false sensations of motion and can cause disorientation. A pilot with vertigo should not fly.",
-    ref: "PHAK Ch. 17"
+    explanation: "Hyperventilation (excessive rate and depth of breathing) lowers carbon dioxide in the blood. Symptoms include visual impairment, lightheadedness, and tingling, and it can lead to unconsciousness.",
+    ref: "Study guide Ch. 9; ACS UA.V.E.K4"
   },
   {
     id: "physio-03", topic: "physio",
@@ -791,7 +791,7 @@ const QUESTION_BANK = [
     id: "comms-02", topic: "comms",
     question: "What is a NOTAM?",
     choices: [
-      "Notice to Air Missions",
+      "Notice to Airmen (also called Notice to Air Missions)",
       "Notice to Aircraft Maintenance",
       "Notification of Traffic and Maps",
       "Non-Operational Airport Map"
@@ -810,7 +810,7 @@ const QUESTION_BANK = [
       "Fly at 1,000 ft to stay above the pattern"
     ],
     answer: 1,
-    explanation: "Do not interfere with manned traffic. Stay out of the pattern and yield right of way to manned aircraft.",
+    explanation: "The study guide says remote pilots should know traffic patterns and radio procedures, always look for other aircraft, and yield right of way to manned aircraft. Radio broadcasts are recommended but not required for remote pilots.",
     ref: "107.37; 107.41"
   },
   {
@@ -838,5 +838,472 @@ const QUESTION_BANK = [
     answer: 0,
     explanation: "Class D airspace surrounds towered airports, and operations there require prior ATC authorization.",
     ref: "107.41; AIM Chapter 3"
+  },
+
+  // ---------- Added from the FAA Remote Pilot Study Guide, ACS, and cheat sheets ----------
+  {
+    id: "regs-21", topic: "regs",
+    question: "Which sUAS category has a weight limit of less than 0.55 lb?",
+    choices: ["Category 1", "Category 2", "Category 3", "No category has a weight limit"],
+    answer: 0,
+    explanation: "Category 1 is limited to less than 0.55 lb. Categories 2 and 3 are limited to less than 55 lb.",
+    ref: "Categories cheat sheet; ACS UA.I.E.K3"
+  },
+  {
+    id: "regs-22", topic: "regs",
+    question: "Which sUAS category may NOT conduct sustained flights over an open-air assembly of people?",
+    choices: ["Category 1", "Category 2", "Category 3", "None of the categories"],
+    answer: 2,
+    explanation: "Categories 1 and 2 may fly sustained operations over an open-air assembly if they meet Remote ID requirements. Category 3 may not.",
+    ref: "Categories cheat sheet; ACS UA.I.E.K3"
+  },
+  {
+    id: "regs-23", topic: "regs",
+    question: "After failing the knowledge test, how long must an applicant wait before retaking it?",
+    choices: ["24 hours", "7 calendar days", "14 calendar days", "30 calendar days"],
+    answer: 2,
+    explanation: "An applicant who fails must wait 14 calendar days before retaking the test, and must submit the AKTR before retesting.",
+    ref: "107.71; ACS Appendix 1"
+  },
+  {
+    id: "regs-24", topic: "regs",
+    question: "How long is an applicant barred from applying for or taking a Part 107 test after cheating or other unauthorized conduct on a knowledge test?",
+    choices: ["30 days", "90 days", "One year", "Permanently"],
+    answer: 2,
+    explanation: "Cheating or unauthorized conduct can lead to certificate revocation and a one-year bar on applying for or taking any Part 107 test.",
+    ref: "107.69; ACS Appendix 2"
+  },
+  {
+    id: "ops-09", topic: "ops",
+    question: "During an inflight emergency such as a battery fire, may the remote pilot exceed 400 ft AGL?",
+    choices: [
+      "Yes, if needed to maneuver to a safe landing area",
+      "No, never under any circumstance",
+      "Only with written ATC approval",
+      "Only over water"
+    ],
+    answer: 0,
+    explanation: "The study guide notes a remote pilot may need to climb above 400 ft AGL to reach a safe landing area in an emergency. A report to the FAA is needed only if the FAA asks for one.",
+    ref: "Study guide Ch. 5; 107.21"
+  },
+  {
+    id: "ops-10", topic: "ops",
+    question: "Which people must be briefed on the flight and the planned emergency procedures?",
+    choices: [
+      "Only the remote pilot",
+      "All crew members, including visual observers and any non-certificated person who manipulates the flight controls",
+      "Only certificated pilots",
+      "No one; the briefing is optional"
+    ],
+    answer: 1,
+    explanation: "The study guide requires all crew members to be briefed, including visual observers and any non-certificated person allowed to manipulate the flight controls.",
+    ref: "Study guide Ch. 5; ACS UA.I.B.K4a"
+  },
+  {
+    id: "ops-11", topic: "ops",
+    question: "Which is a safety hazard of lithium batteries used in sUAS?",
+    choices: [
+      "Fire risk if damaged, overcharged, or improperly stored or charged",
+      "Longer life when punctured",
+      "No hazard when fully charged",
+      "Freezing and expansion at low temperature"
+    ],
+    answer: 0,
+    explanation: "Damaged, overcharged, or mishandled lithium batteries can overheat and catch fire. Follow safe charging, storage, and transport practices.",
+    ref: "ACS UA.V.C.K2"
+  },
+  {
+    id: "ops-12", topic: "ops",
+    question: "What is a likely effect of losing GPS signal during flight?",
+    choices: [
+      "Loss of position hold and possible drift, so the pilot may need to fly manually",
+      "Automatic landing at the nearest airport",
+      "Increased battery endurance",
+      "No effect if the aircraft has a compass"
+    ],
+    answer: 0,
+    explanation: "Without GPS the aircraft can drift and lose position hold, and automated return-to-home may not work. The pilot should be ready to fly manually.",
+    ref: "ACS UA.V.C.K4"
+  },
+  {
+    id: "ops-13", topic: "ops",
+    question: "Which sUAS categories require a Manufacturer's Declaration of Compliance (DoC)?",
+    choices: ["Category 1 only", "Categories 2 and 3", "Categories 1, 2, and 3", "None"],
+    answer: 1,
+    explanation: "Category 1 needs no Means of Compliance (MoC) or DoC. Categories 2 and 3 require both.",
+    ref: "Categories cheat sheet; ACS UA.V.F.K7"
+  },
+  {
+    id: "airspace-09", topic: "airspace",
+    question: "What does MOA stand for on a sectional chart?",
+    choices: ["Military Operations Area", "Major Obstruction Advisory", "Mountain Overflight Area", "Minimum Operating Altitude"],
+    answer: 0,
+    explanation: "A Military Operations Area separates military training, such as fast jets at low altitude, from IFR traffic. You can fly in a MOA without approval, but exercise caution.",
+    ref: "Study guide Ch. 2; special-use airspace summary"
+  },
+  {
+    id: "airspace-10", topic: "airspace",
+    question: "On a chart, what does an 'A' prefix followed by a number (for example, A-211) indicate?",
+    choices: [
+      "An alert area with high volumes of pilot training or unusual aerial activity",
+      "An airport with an instrument approach",
+      "An area open only to agricultural aircraft",
+      "An area of automated weather reporting"
+    ],
+    answer: 0,
+    explanation: "Alert areas warn nonparticipating pilots of high pilot-training activity or unusual aerial activity. You can fly there without approval, but exercise caution.",
+    ref: "Study guide Ch. 2; special-use airspace summary"
+  },
+  {
+    id: "airspace-11", topic: "airspace",
+    question: "What does a 'W' prefix followed by a number (for example, W-237) designate?",
+    choices: ["Warning area", "Weather station", "Wilderness area", "Wind shear zone"],
+    answer: 0,
+    explanation: "Warning areas contain hazardous activity similar to restricted areas and can extend 3 NM off the U.S. coast. You need approval before flying there.",
+    ref: "Study guide Ch. 2; special-use airspace summary"
+  },
+  {
+    id: "airspace-12", topic: "airspace",
+    question: "Over wilderness areas, National Parks, or NOAA marine areas, what altitude is the study guide's threshold for requesting operation?",
+    choices: ["Above 400 ft AGL", "Above 2,000 ft AGL", "Above 5,000 ft MSL", "Above 10,000 ft MSL"],
+    answer: 1,
+    explanation: "The study guide lists operating above 2,000 ft AGL over these areas as requiring a request.",
+    ref: "Study guide Ch. 2"
+  },
+  {
+    id: "airspace-13", topic: "airspace",
+    question: "Class C airspace generally extends up to what altitude above airport elevation?",
+    choices: ["1,200 ft", "2,500 ft", "4,000 ft", "10,000 ft"],
+    answer: 2,
+    explanation: "Class C extends from the surface to 4,000 ft above airport elevation. Its outer circle runs from 1,200 to 4,000 ft. Remote pilots need ATC authorization.",
+    ref: "Study guide Ch. 2"
+  },
+  {
+    id: "airspace-14", topic: "airspace",
+    question: "Class D airspace generally extends from the surface to how far above airport elevation?",
+    choices: ["1,200 ft", "2,500 ft", "4,000 ft", "700 ft"],
+    answer: 1,
+    explanation: "Class D extends from the surface to 2,500 ft above airport elevation around towered airports. Remote pilots need ATC authorization.",
+    ref: "Study guide Ch. 2; Airspace cheat sheet"
+  },
+  {
+    id: "airspace-15", topic: "airspace",
+    question: "Can a remote pilot fly in a Military Operations Area (MOA) without approval?",
+    choices: [
+      "Yes, but exercise caution",
+      "No, approval is always required",
+      "Only at night",
+      "Only with a visual observer"
+    ],
+    answer: 0,
+    explanation: "MOAs do not require approval, but fast military aircraft may operate at very low altitude, so exercise caution.",
+    ref: "Special-use airspace summary"
+  },
+  {
+    id: "airspace-16", topic: "airspace",
+    question: "Which special-use airspace is flyable without approval, with activity stopped when spotters see an aircraft in the area?",
+    choices: ["Prohibited area", "Restricted area", "Controlled firing area", "Warning area"],
+    answer: 2,
+    explanation: "Controlled firing areas contain activity hazardous to nonparticipants. Spotters stop the activity when they see an aircraft, and CFAs are not depicted on the chart.",
+    ref: "Study guide Ch. 2; special-use airspace summary"
+  },
+  {
+    id: "airspace-17", topic: "airspace",
+    question: "Which special-use airspace can you NOT fly in without approval?",
+    choices: ["Alert area", "Military Operations Area", "Controlled firing area", "Prohibited area"],
+    answer: 3,
+    explanation: "Prohibited areas (P-) are established for security reasons, and flight is not allowed without approval. Alert areas, MOAs, and CFAs can be flown without approval.",
+    ref: "Special-use airspace summary"
+  },
+  {
+    id: "weather-13", topic: "weather",
+    question: "In the METAR wind group 14021G26KT, what does G26 mean?",
+    choices: ["Wind gusts to 26 knots", "Wind from 260 degrees", "Visibility of 26 miles", "Ceiling of 2,600 feet"],
+    answer: 0,
+    explanation: "The wind is from 140 degrees at 21 knots, with peak gusts to 26 knots. The letter G marks the gust value.",
+    ref: "Study guide Ch. 3a"
+  },
+  {
+    id: "weather-14", topic: "weather",
+    question: "In a METAR remark, what does A2970 represent?",
+    choices: ["Altimeter setting of 29.70 inHg", "Air temperature of 29.7 °C", "Airport elevation of 2,970 ft", "Visibility of 2.97 statute miles"],
+    answer: 0,
+    explanation: "The letter A marks the altimeter setting in inches of mercury, so A2970 is 29.70 inHg.",
+    ref: "Study guide Ch. 3a"
+  },
+  {
+    id: "weather-15", topic: "weather",
+    question: "Which two conditions are necessary for structural icing in flight?",
+    choices: [
+      "Visible moisture and a temperature of 0 °C or colder where the moisture strikes the aircraft",
+      "Clear skies and temperatures above 15 °C",
+      "Calm winds and low humidity",
+      "Low pressure and high altitude only"
+    ],
+    answer: 0,
+    explanation: "Structural icing needs visible water such as rain or cloud droplets, and a temperature of 0 °C or colder where the moisture strikes the aircraft.",
+    ref: "Study guide Ch. 3b"
+  },
+  {
+    id: "weather-16", topic: "weather",
+    question: "Wind at mountaintop level in excess of 25 knots suggests what?",
+    choices: ["Some turbulence", "Smooth, stable air", "Fog formation", "Icing only"],
+    answer: 0,
+    explanation: "The study guide says 25 knots at mountaintop level suggests some turbulence. Wind over 40 knots across a mountain barrier calls for caution.",
+    ref: "Study guide Ch. 3b"
+  },
+  {
+    id: "weather-17", topic: "weather",
+    question: "In which thunderstorm stage do all thunderstorm hazards reach their greatest intensity?",
+    choices: ["Mature stage", "Cumulus stage", "Dissipating stage", "Stratus stage"],
+    answer: 0,
+    explanation: "Downdrafts, strong gusty surface winds, and precipitation peak in the mature stage. The cumulus stage is updraft-dominated, and the dissipating stage leaves harmless remnants.",
+    ref: "Study guide Ch. 3b"
+  },
+  {
+    id: "weather-18", topic: "weather",
+    question: "A microburst can cause headwind losses of approximately how many knots?",
+    choices: ["5 to 10 knots", "30 to 90 knots", "100 to 150 knots", "1 to 2 knots"],
+    answer: 1,
+    explanation: "A typical microburst produces downdrafts up to 6,000 fpm and headwind losses of 30 to 90 knots, which seriously degrade performance.",
+    ref: "Study guide Ch. 3b"
+  },
+  {
+    id: "weather-19", topic: "weather",
+    question: "Cumulonimbus clouds can contain updrafts and downdrafts that exceed what rate?",
+    choices: ["300 fpm", "1,000 fpm", "3,000 fpm", "10,000 fpm"],
+    answer: 2,
+    explanation: "The study guide notes that updrafts and downdrafts in cumulonimbus clouds can exceed 3,000 fpm.",
+    ref: "Study guide Ch. 3b"
+  },
+  {
+    id: "weather-20", topic: "weather",
+    question: "What is a temperature inversion?",
+    choices: [
+      "Temperature increasing with altitude",
+      "Temperature decreasing with altitude at the standard lapse rate",
+      "Temperature equal to the dew point",
+      "Temperature always below freezing"
+    ],
+    answer: 0,
+    explanation: "In an inversion, air temperature increases with altitude. Inversions can trap moisture and pollutants, which reduces visibility.",
+    ref: "Study guide Ch. 3b"
+  },
+  {
+    id: "weather-21", topic: "weather",
+    question: "How often are Terminal Aerodrome Forecasts (TAFs) normally issued?",
+    choices: ["Once a day", "Twice a day", "Four times a day", "Every hour"],
+    answer: 2,
+    explanation: "TAFs are issued four times a day, at 0000, 0600, 1200, and 1800Z.",
+    ref: "Study guide Ch. 3a"
+  },
+  {
+    id: "weather-22", topic: "weather",
+    question: "For aviation purposes, what is a ceiling?",
+    choices: [
+      "The lowest layer of clouds reported as broken or overcast, or the vertical visibility into an obscuration",
+      "The highest cloud layer reported",
+      "Surface visibility",
+      "The altitude of the freezing level"
+    ],
+    answer: 0,
+    explanation: "A ceiling is the lowest broken or overcast layer, or the vertical visibility into fog or haze.",
+    ref: "Study guide Ch. 3b"
+  },
+  {
+    id: "perf-06", topic: "performance",
+    question: "In a coordinated level turn at a 60° bank, the load factor is approximately?",
+    choices: ["1 G", "2 Gs", "3 Gs", "5.76 Gs"],
+    answer: 1,
+    explanation: "At a 60° bank the load factor is 2 Gs. At 80° it is 5.76 Gs.",
+    ref: "Study guide Ch. 4"
+  },
+  {
+    id: "perf-07", topic: "performance",
+    question: "An aircraft with a 50-knot unaccelerated stall speed is loaded to 4 Gs. What is its stall speed?",
+    choices: ["25 knots", "50 knots", "100 knots", "200 knots"],
+    answer: 2,
+    explanation: "Stall speed rises with the square root of the load factor. The square root of 4 is 2, so 50 kt × 2 = 100 kt.",
+    ref: "Study guide Ch. 4"
+  },
+  {
+    id: "perf-08", topic: "performance",
+    question: "Which term describes an aircraft's capability to respond to the pilot's control, especially regarding flight path and attitude?",
+    choices: ["Controllability", "Maneuverability", "Stability", "Load factor"],
+    answer: 0,
+    explanation: "Controllability is the aircraft's response to pilot control. Maneuverability is the ability to be maneuvered easily while withstanding the stresses of maneuvers.",
+    ref: "Study guide Ch. 4"
+  },
+  {
+    id: "nav-05", topic: "nav",
+    question: "Lines of longitude (meridians) run in which direction?",
+    choices: ["East-west, parallel to the equator", "North-south, from pole to pole", "Diagonally across the chart", "Only around the equator"],
+    answer: 1,
+    explanation: "Meridians run from the North Pole to the South Pole and are measured east and west from the Prime Meridian.",
+    ref: "Study guide Ch. 11"
+  },
+  {
+    id: "nav-06", topic: "nav",
+    question: "On a sectional chart, how is magnetic variation shown?",
+    choices: ["Broken magenta isogonic lines", "Solid blue circles", "Dotted green rings", "Red arrows along airways"],
+    answer: 0,
+    explanation: "Isogonic lines connect points of equal magnetic variation and are drawn as broken magenta lines.",
+    ref: "Study guide Ch. 11"
+  },
+  {
+    id: "nav-07", topic: "nav",
+    question: "How often is the Chart Supplement U.S. revised?",
+    choices: ["Every 7 days", "Every 56 days", "Every 6 months", "Once a year"],
+    answer: 1,
+    explanation: "The Chart Supplement U.S. (formerly the Airport/Facility Directory) is revised every 56 days.",
+    ref: "Study guide Ch. 11"
+  },
+  {
+    id: "nav-08", topic: "nav",
+    question: "How far horizontally should skeletal antenna structures be avoided?",
+    choices: ["At least 500 ft", "At least 1,000 ft", "At least 2,000 ft", "At least 5,000 ft"],
+    answer: 2,
+    explanation: "Guy wires can extend about 1,500 ft horizontally, so the study guide advises at least 2,000 ft of horizontal separation, with extreme caution below 2,000 ft AGL.",
+    ref: "Study guide Ch. 11"
+  },
+  {
+    id: "comms-06", topic: "comms",
+    question: "When an ATIS is updated, what changes?",
+    choices: ["Its letter code, such as Alpha changing to Bravo", "The airport name", "The runway length", "The tower frequency"],
+    answer: 0,
+    explanation: "Each ATIS update gets the next letter in the alphabet, so ATIS Alpha is replaced by ATIS Bravo.",
+    ref: "Study guide Ch. 11"
+  },
+  {
+    id: "comms-07", topic: "comms",
+    question: "A non-towered airport has no UNICOM or FSS. Which frequency should be used?",
+    choices: ["122.9 MULTICOM", "121.5 Guard", "118.0 Ground", "135.0 Clearance"],
+    answer: 0,
+    explanation: "The MULTICOM frequency of 122.9 is used at non-towered airports that have no FSS or UNICOM.",
+    ref: "Study guide Ch. 7"
+  },
+  {
+    id: "comms-08", topic: "comms",
+    question: "At a non-towered airport, when does the study guide recommend an inbound aircraft make its first 'broadcast in the blind'?",
+    choices: ["10 miles out", "1 mile out", "50 miles out", "Only on final approach"],
+    answer: 0,
+    explanation: "The guide describes broadcasting about 10 miles from the airport, stating the airport name, position, and intentions.",
+    ref: "Study guide Ch. 7"
+  },
+  {
+    id: "comms-09", topic: "comms",
+    question: "How is the registration N123AB pronounced in aviation radio phraseology?",
+    choices: [
+      "November One-Two-Three-Alpha-Bravo",
+      "Nine-One-Two-Three-A-B",
+      "Niner One Two Three Able Baker",
+      "Number 123 Alpha Bravo"
+    ],
+    answer: 0,
+    explanation: "Aviation uses the ICAO phonetic alphabet, so N is 'November' and each digit is spoken individually.",
+    ref: "Study guide Ch. 7"
+  },
+  {
+    id: "comms-10", topic: "comms",
+    question: "At most non-towered airports, which frequency is UNICOM usually on?",
+    choices: ["122.8", "122.9", "121.5", "118.1"],
+    answer: 0,
+    explanation: "Most non-towered airports use UNICOM on 122.8, but always confirm on the sectional chart or Chart Supplement.",
+    ref: "Study guide Ch. 7"
+  },
+  {
+    id: "adm-08", topic: "adm",
+    question: "Which is a fundamental principle of risk management?",
+    choices: [
+      "Accept no unnecessary risk",
+      "Accept any risk if the mission is important",
+      "Make all risk decisions at the highest management level",
+      "Manage risk only during preflight planning"
+    ],
+    answer: 0,
+    explanation: "The study guide's first principle is to accept no unnecessary risk. Risk management applies at every stage of the flight, not only preflight.",
+    ref: "Study guide Ch. 10"
+  },
+  {
+    id: "adm-09", topic: "adm",
+    question: "In the 3P model, what does 3P stand for?",
+    choices: ["Perceive, Process, Perform", "Plan, Prepare, Proceed", "Preflight, Pre-takeoff, Postflight", "Pilot, Plane, Passengers"],
+    answer: 0,
+    explanation: "The 3P model is Perceive the circumstances, Process their impact on safety, and Perform the best course of action.",
+    ref: "Study guide Ch. 10"
+  },
+  {
+    id: "adm-10", topic: "adm",
+    question: "What is the first step of the DECIDE model?",
+    choices: ["Detect", "Decide", "Do", "Evaluate"],
+    answer: 0,
+    explanation: "DECIDE stands for Detect, Estimate, Choose, Identify, Do, Evaluate. Detect comes first.",
+    ref: "Study guide Ch. 10, Figure 10-5"
+  },
+  {
+    id: "adm-11", topic: "adm",
+    question: "Which operational pitfall describes fixation on the original destination despite changing conditions?",
+    choices: ["Get-there-itis", "Duck-under syndrome", "Mindset", "Peer pressure"],
+    answer: 0,
+    explanation: "Get-there-itis is a fixation on the original goal or destination while disregarding alternatives.",
+    ref: "Study guide Ch. 10, Figure 10-6"
+  },
+  {
+    id: "adm-12", topic: "adm",
+    question: "Which hazardous attitude is expressed as 'What's the use?'",
+    choices: ["Resignation", "Macho", "Invulnerability", "Impulsivity"],
+    answer: 0,
+    explanation: "Resignation's antidote is 'I'm not helpless. I can make a difference.'",
+    ref: "Study guide Ch. 10, Figure 10-2"
+  },
+  {
+    id: "adm-13", topic: "adm",
+    question: "Situational awareness is best described as:",
+    choices: [
+      "Accurate perception and understanding of all factors that affect safety before, during, and after flight",
+      "Having the correct map on the controller",
+      "Knowing how many runways an airport has",
+      "Reading the flight manual once before flight"
+    ],
+    answer: 0,
+    explanation: "Situational awareness means perceiving and understanding the factors in the five risk elements (flight, pilot, aircraft, environment, and type of operation).",
+    ref: "Study guide Ch. 10"
+  },
+  {
+    id: "physio-05", topic: "physio",
+    question: "After starting a new prescription or over-the-counter medication, how long should a pilot wait after the first dose before flying?",
+    choices: ["2 hours", "8 hours", "48 hours", "7 days"],
+    answer: 2,
+    explanation: "The study guide advises waiting at least 48 hours after the first dose before flying, to check for side effects.",
+    ref: "Study guide Ch. 9"
+  },
+  {
+    id: "physio-06", topic: "physio",
+    question: "About what percentage of body weight loss triggers the thirst mechanism?",
+    choices: ["0.5%", "2%", "5%", "10%"],
+    answer: 1,
+    explanation: "Most people become thirsty at about a 1.5-quart fluid deficit, or about 2% of body weight. The thirst mechanism comes late, so drink before you feel thirsty.",
+    ref: "Study guide Ch. 9"
+  },
+  {
+    id: "physio-07", topic: "physio",
+    question: "What is a recommended way to treat hyperventilation?",
+    choices: [
+      "Breathe normally; breathing into a paper bag or talking aloud can help",
+      "Breathe as fast and deeply as possible",
+      "Hold your breath until you feel better",
+      "Drink alcohol to calm down"
+    ],
+    answer: 0,
+    explanation: "Restoring normal carbon dioxide levels is the goal. Slowing breathing, breathing into a paper bag, or talking aloud helps.",
+    ref: "Study guide Ch. 9"
+  },
+  {
+    id: "physio-08", topic: "physio",
+    question: "How much water per hour does the study guide recommend for severe heat stress?",
+    choices: ["One quart per hour", "One cup per hour", "Two cups per day", "One pint per hour"],
+    answer: 0,
+    explanation: "The guide recommends one quart per hour for severe heat stress and one pint per hour for moderate stress.",
+    ref: "Study guide Ch. 9"
   }
 ];

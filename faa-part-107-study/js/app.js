@@ -22,7 +22,7 @@
     ["Alcohol", "8 hours from drinking, BAC below 0.04", "107.27"],
     ["Recurrent training", "Every 24 calendar months", "Part 107 certification"],
     ["Accident report", "Within 10 days if serious injury, loss of consciousness, or over $500 damage", "107.9"],
-    ["Knowledge test", "60 questions, 2 hours, 70% (42 correct) to pass", ""],
+    ["Knowledge test", "60 questions, 2 hours, 70% (42 correct) to pass", "FAA ACS Appendix 1"],
     ["VFR sectional chart scale", "1:500,000", ""],
     ["Standard sea-level conditions", "29.92 inHg and 15°C", ""],
     ["Standard lapse rate", "About 2°C per 1,000 ft", ""],

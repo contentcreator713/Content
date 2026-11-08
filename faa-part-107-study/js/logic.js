@@ -22,6 +22,18 @@
   // Knowledge test format: 60 questions, 2 hours, 70% (42 of 60) to pass.
   const EXAM = { questionCount: 60, minutes: 120, passPercent: 70 };
 
+  // FAA ACS areas of operation with the published share of test items (ACS Appendix 1).
+  // `count` is the mock-exam quota for each area. Each quota sits inside its ACS range.
+  // Area V (Operations) covers radio, airports, emergencies, ADM, physiology, and maintenance.
+  // Charts and navigation are included here because airport data and charts fall under Task B.
+  const ACS_AREAS = [
+    { id: "I", name: "Regulations", range: [15, 25], topics: ["regs"], count: 12 },
+    { id: "II", name: "Airspace", range: [15, 25], topics: ["airspace"], count: 12 },
+    { id: "III", name: "Weather", range: [11, 16], topics: ["weather"], count: 8 },
+    { id: "IV", name: "Loading & Performance", range: [7, 11], topics: ["performance"], count: 5 },
+    { id: "V", name: "Operations", range: [35, 45], topics: ["ops", "adm", "physio", "nav", "comms"], count: 23 }
+  ];
+
   function topicIds() {
     return TOPICS.map((t) => t.id);
   }
@@ -64,10 +76,23 @@
     return Number.isFinite(count) ? shuffled.slice(0, count) : shuffled;
   }
 
-  // Mock exam: a random draw of up to 60 questions from the bank.
+  // Mock exam: draws each ACS area's quota from its topics, then shuffles the set.
+  // If an area runs short, the gap is filled from unused questions so the exam still has 60.
   function buildExam(bank, rng) {
-    const n = Math.min(EXAM.questionCount, bank.length);
-    return shuffle(bank, rng).slice(0, n);
+    const picked = [];
+    const used = new Set();
+    for (const area of ACS_AREAS) {
+      const pool = shuffle(bank.filter((q) => area.topics.includes(q.topic)), rng);
+      for (const q of pool.slice(0, area.count)) {
+        picked.push(q);
+        used.add(q.id);
+      }
+    }
+    if (picked.length < EXAM.questionCount) {
+      const rest = shuffle(bank.filter((q) => !used.has(q.id)), rng);
+      for (const q of rest.slice(0, EXAM.questionCount - picked.length)) picked.push(q);
+    }
+    return shuffle(picked, rng).slice(0, EXAM.questionCount);
   }
 
   // answers: { [questionId]: chosenIndex }. Unanswered questions count as missed.
@@ -178,6 +203,7 @@
   return {
     TOPICS,
     EXAM,
+    ACS_AREAS,
     topicIds,
     topicName,
     shuffle,

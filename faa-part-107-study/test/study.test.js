@@ -163,6 +163,38 @@ describe("building sets", () => {
   });
 });
 
+describe("ACS-weighted mock exam", () => {
+  test("area quotas add up to the 60-question exam", () => {
+    const total = L.ACS_AREAS.reduce((sum, a) => sum + a.count, 0);
+    assert.equal(total, L.EXAM.questionCount);
+  });
+
+  test("each area's quota falls inside its published ACS range", () => {
+    for (const a of L.ACS_AREAS) {
+      const pct = (a.count / L.EXAM.questionCount) * 100;
+      assert.ok(pct >= a.range[0] && pct <= a.range[1],
+        `area ${a.id}: ${pct.toFixed(1)}% outside ${a.range[0]}-${a.range[1]}%`);
+    }
+  });
+
+  test("the exam draws exactly the quota from each area", () => {
+    const exam = L.buildExam(BANK, seeded(42));
+    assert.equal(exam.length, 60);
+    assert.equal(new Set(exam.map((q) => q.id)).size, 60);
+    for (const a of L.ACS_AREAS) {
+      const n = exam.filter((q) => a.topics.includes(q.topic)).length;
+      assert.equal(n, a.count, `area ${a.id} has ${n}, expected ${a.count}`);
+    }
+  });
+
+  test("every ACS topic is represented in the bank", () => {
+    for (const a of L.ACS_AREAS) {
+      const n = BANK.filter((q) => a.topics.includes(q.topic)).length;
+      assert.ok(n >= a.count, `area ${a.id} has ${n} questions, needs ${a.count}`);
+    }
+  });
+});
+
 describe("progress tracking", () => {
   test("recordAnswer accumulates seen and correct counts", () => {
     let stats = {};

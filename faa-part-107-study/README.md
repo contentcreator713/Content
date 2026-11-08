@@ -6,7 +6,7 @@ No frameworks and no build step: plain HTML, CSS, and JavaScript.
 ## Features
 
 - **Practice by topic**: 10, 20, or 40 questions, or all of them, filtered by topic, with instant feedback and an explanation after each answer.
-- **Mock exam**: 60 random questions in a 2-hour timer, with a question navigator, pass mark of 70% (42 correct), and an auto-submit when time runs out.
+- **Mock exam**: 60 questions in a 2-hour timer, with a question navigator, pass mark of 70% (42 correct), and an auto-submit when time runs out. Questions are weighted to the FAA Airman Certification Standards areas (Regulations 12, Airspace 12, Weather 8, Loading & Performance 5, Operations 23).
 - **Review missed**: practice only the questions you most recently got wrong.
 - **Progress**: accuracy by topic, questions seen, and missed count. Saved in your browser's `localStorage`.
 - **Key numbers**: a quick-reference table of the figures most often tested (400 ft AGL, 87 knots, 55 lb, 3 SM visibility, and so on).
