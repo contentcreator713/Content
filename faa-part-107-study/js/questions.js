@@ -153,16 +153,16 @@ const QUESTION_BANK = [
   },
   {
     id: "regs-15", topic: "regs",
-    question: "Under Part 107, daylight operations are permitted during which period?",
+    question: "Under 14 CFR 107.29, which periods are civil twilight, when anti-collision lighting is required?",
     choices: [
       "Official sunrise to official sunset",
-      "30 minutes before official sunrise to 30 minutes after official sunset",
+      "30 minutes before official sunrise to sunrise, and sunset to 30 minutes after official sunset",
       "One hour before sunrise to one hour after sunset",
-      "Only when the sun is fully above the horizon"
+      "Only after full darkness"
     ],
     answer: 1,
-    explanation: "Daylight operation covers the period from 30 minutes before official sunrise to 30 minutes after official sunset (civil twilight).",
-    ref: "107.29"
+    explanation: "Civil twilight runs from 30 minutes before official sunrise to sunrise, and from sunset to 30 minutes after official sunset. Operating then requires anti-collision lighting visible for at least 3 statute miles. Daytime outside civil twilight needs no lights.",
+    ref: "107.29(b) and (c)"
   },
   {
     id: "regs-16", topic: "regs",

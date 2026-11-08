@@ -17,7 +17,7 @@
     ["sUAS per remote pilot", "1 at a time", "107.35"],
     ["Minimum visibility", "3 statute miles", "107.51"],
     ["Cloud clearance", "500 ft below, 2,000 ft horizontal", "107.51"],
-    ["Daylight operations", "30 min before sunrise to 30 min after sunset", "107.29"],
+    ["Civil twilight (lights required)", "30 min before sunrise to sunrise, and sunset to 30 min after", "107.29"],
     ["Night operations", "Updated training and anti-collision lights visible 3 SM", "107.29"],
     ["Alcohol", "8 hours from drinking, BAC below 0.04", "107.27"],
     ["Recurrent training", "Every 24 calendar months", "Part 107 certification"],
